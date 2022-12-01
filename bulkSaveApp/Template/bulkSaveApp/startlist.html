@@ -1,0 +1,65 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Start A List | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/startist.css' %}" />
+</head>
+
+<body>
+    <div class="formarea">
+        <div id="flash">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong style="color: red">{{ message }}</strong>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+        <div class="startlistheader">
+            <div>
+                <a href={% url 'AllAvailableLists' %}>
+                    <div class="goback" title="Go Back">
+                        <img src={% static 'images/back.png' %} />
+                    </div>
+                </a>
+            </div>
+            <div>
+                <h1 class="specialtext">Start A List</h1>
+            </div>
+        </div>
+
+
+        <form method='POST'>
+            {{allListStarters.Username}}
+            {% csrf_token %}
+            <label class="specialtext">Enter Your Username: </label>
+            <input type="text" name="Username" placeholder="Enter Your Username [Eg: Johnny]" /><br /><br />
+            <label class="specialtext">List signature: </label>
+            <input type="text" name="signature" placeholder="Unique Marker For This List" /><br /><br />
+            <label class="specialtext">List Title: </label>
+            <input type="text" name="title" placeholder="Enter List Title [Eg: Outing Attendees]" /><br /><br />
+            <label class="specialtext">List Description: </label>
+            <input type="text" name="Description"
+                placeholder="Enter List Description [Eg: This list is meant for...]" /><br /><br />
+            <label class="specialtext">Can Anyone Download This List?: </label>
+            <select name="access">
+                <option value="yes">Choose An Option</option>
+                <option value="yes">Yes, Allow Anyone</option>
+                <option value="no">No!, Just Me</option>
+            </select>
+            <br /><br />
+            <label class="specialtext">Password: </label>
+            <input type="password" name="Password" placeholder="Enter Your Password" /><br /><br />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
+{% endblock content %}

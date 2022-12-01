@@ -1,0 +1,37 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Delete List | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/signup.css' %}" />
+</head>
+
+<body>
+    <div class="formmain">
+
+        {% if user.is_authenticated %}
+        <h3 class="specialtext">Hi {{request.user}},</h3><br />
+        {% endif %}
+
+        <h3 class="specialtext">Sure You Want To Delete the {{ allLists.Title }} List?</h3><br />
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <button type='submit' name="submit">Yes, Delete It!🥺</button><br />
+            <!-- <a href={% url 'AllAvailableLists' %}><button>No, I Changed My Mind😊</button></a> -->
+
+        </form>
+        <a href='{{request.META.HTTP_REFERER}}'><button>No, I Changed My Mind😊</button></a>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock content %}

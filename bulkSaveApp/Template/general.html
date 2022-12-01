@@ -1,0 +1,18 @@
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href={% static 'images/logo.png' %}>
+    <!-- <title>BulkSave </title> -->
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/general.css' %}" />
+</head>
+
+<body>
+    {% include 'navbar.html' %} {% block content %} {% endblock content %}
+</body>
+
+</html>

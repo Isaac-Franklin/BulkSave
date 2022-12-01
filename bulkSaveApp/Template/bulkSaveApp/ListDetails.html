@@ -1,0 +1,71 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{allLists.Title}} List | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/alllist.css' %}" />
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <a href={% url 'AllAvailableLists' %}>
+                <div class="goback" title="Go Back">
+                    <img src={% static 'images/back.png' %} />
+                </div>
+            </a>
+        </div>
+        {% if user.is_authenticated %}
+        <h3 class="specialtext">Hi {{request.user}},</h3><br />
+        {% endif %}
+        <div id="flash">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong style="color: red">{{ message }}</strong>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+        {% if numofcontact > 0 %}
+        <p class="specialtext">There Are {{numofcontact}} Contacts Saved </p>
+        {% elif numofcontact == 1 %}
+        <p class="specialtext">There Is Only {{numofcontact}} Contact Saved </p>
+        {% else %}
+        <p class="specialtext">There Are 0 Contacts Saved For Now</p>
+        {% endif %}
+        <div class="mainlistsection">
+            <div class="mainlistsectioninner">
+                <div class="listdetails">
+                    <p>{{ allLists.Username }} Created this list:</p>
+                    <h3> {{ allLists.Title }}</h3><br />
+                    <small> {{ allLists.Description }}</small><br /><br />
+                    <small> Created {{ allLists.created_at | timesince }} ago</small><br />
+
+                </div>
+                <div>
+                    <a href="/collectdata/{{ allLists.Signature }}/"><button>Join This List</button></a>
+                </div>
+                {% if request.user.username == allLists.Username %}
+                <a href="/deletelist/{{ allLists.Signature }}/"><button>Delete This List</button></a>
+                {% endif %}
+
+            </div>
+        </div>
+        {% if allLists.Access == 'yes' %}
+        <div class="downloadlistbtn">
+            <a href="/exportList/{{ allLists.Signature }}/"><button>Download List
+                    Now</button></a>
+        </div>
+        {% else %}
+        <p class="specialtext"><button>This is a private list, only {{allLists.Username}} can download</button></p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
+{% endblock content %}

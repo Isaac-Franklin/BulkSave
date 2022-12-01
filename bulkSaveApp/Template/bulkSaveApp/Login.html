@@ -1,0 +1,45 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/signup.css' %}" />
+</head>
+
+<body>
+    <div class="formmain">
+
+        <div id="flash">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong style="color: red">{{ message }}</strong><small>Refresh page to remove</small>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+
+        <h1 class="specialtext">Welcome Back</h1><br />
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="specialtext">Enter Your Username:</label>
+            <input type='text' name="username" placeholder='Username [eg: johnny]' /><br /><br />
+
+            <label class="specialtext">Enter Your Password:</label>
+            <input type='password' name="password" placeholder='Password' /><br /><br />
+            <button type='submit' name="submit">Login</button><br /><br />
+            <p class="specialtext">Do not have an account? <a href='/signuppage/' class="specialtext">Signup Here</a>
+            </p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock content %}

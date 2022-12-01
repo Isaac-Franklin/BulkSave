@@ -1,0 +1,41 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Join A List | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/contactlist.css' %}" />
+</head>
+
+<body>
+    <div class="formarea">
+        <div class="startlistheader">
+            <div>
+                <a href={% url 'AllAvailableLists' %}>
+                    <div class="goback" title="Go Back">
+                        <img src={% static 'images/back.png' %} />
+                    </div>
+                </a>
+            </div>
+            <div>
+                <h2 class="specialtext">Join us @ {{mycontacts.Title}}</h2>
+            </div>
+        </div>
+        <form method='POST'>
+            {% csrf_token %}
+            <input type="text" name="fullname" placeholder="Full Name [Eg: John Doe]" /><br />
+            <input type="text" name="signature" value={{Signature}} placeholder="THIS IS A DEFAULT VALUE" /><br />
+            <input type="tel" name="phonenumber" placeholder="Phone Number [Eg: +2345 567 1890]" /><br />
+            <input type="tel" name="phonenumber2" placeholder="OPTIONAL Phone Number [Eg: +2345 567 1890]" /><br />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
+{% endblock content %}

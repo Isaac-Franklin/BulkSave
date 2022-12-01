@@ -1,0 +1,68 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>All Available List | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/alllist.css' %}" />
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="introsection">
+            <div>
+                {% if user.is_authenticated %}
+                <h3 class="specialtext">Hi {{request.user}},</h3><br />
+                {% endif %}
+            </div>
+            <div>
+                <a href="{% url 'StartListPage' %}"><button class="createlistbtn">Create A New List</button></a>
+            </div>
+        </div>
+        <div id="flash">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                <strong style="color: red">{{ message }}</strong>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+        {% if numoflists > 0 %}
+        <p class="specialtext">There are {{numoflists}} lists available now</p>
+        {% else %}
+        <p>There are 0 lists available now</p>
+        {% endif %}
+        {% for allLists in allLists %}
+        <div class="mainlistsection">
+            <div class="mainlistsectioninner">
+                <div class="listdetails">
+                    <p>{{ allLists.Username }} Created this list</p>
+                    <a href="/listdetails/{{ allLists.Signature }}/">
+                        <h3> Title: {{ allLists.Title }}</h3>
+                    </a><br />
+                    <small> Description: {{ allLists.Description }}</small><br /><br />
+                    <small> Created {{ allLists.created_at | timesince }} ago</small><br />
+
+                </div>
+                <div>
+                    <a href="/collectdata/{{ allLists.Signature }}/"><button>Join This List</button></a>
+                </div>
+                {% if request.user.username == allLists.Username %}
+                <a href="/deletelist/{{ allLists.Signature }}/"><button>Delete This List</button></a>
+                {% endif %}
+
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</body>
+
+</html>
+{% endblock content %}

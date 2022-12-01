@@ -1,0 +1,57 @@
+{% extends 'general.html' %}
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Signup | BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/signup.css' %}" />
+</head>
+
+<body>
+
+    <div id="flash">
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-{{ message.tags}} m-0" role="alert">
+            <strong style="color: red">{{ message }}</strong><small>Refresh page to remove</small>
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+
+    <div class="formmain">
+        <h1 class="specialtext">Join Us</h1><br /><br />
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="specialtext">Enter Full Name:</label>
+            <input type='text' name="fullname" placeholder='Full Name [eg: John Doe]' /><br /><br />
+            <label class="specialtext">Enter Username:</label>
+            <input type='text' name="username" placeholder='Username [eg: Johnny]' /><br /><br />
+            <label class="specialtext">How Did You Hear About Bulk Save:</label>
+            <textarea type='text' name="referal"
+                placeholder='Kindly Tell Us How You Heard About BulkSave'></textarea><br /><br />
+            <label class="specialtext">Enter Email Address:</label>
+            <input type='text' name="email" placeholder='Email Address [eg: johndoe@gmail.com]' /><br /><br />
+            <!-- <div id="profilepic">
+                <p class="specialtext">Select A Profile Image Below
+                </p>
+                <input type='file' name="profileimage" title='Select A Profile Image' /><br /><br />
+            </div> -->
+            <label class="specialtext">Choose A Password:</label>
+            <input type='password' name="password" placeholder='Password' /><br /><br />
+            <label class="specialtext">Retype The Chosen Password:</label>
+            <input type='password' name="repassword" placeholder='Retype Password' /><br /><br />
+            <button type='submit' name="submit">Let's Get Started</button> <br /><br />
+            <p class="specialtext">Have An Account Already? <a href='/loginpage/'>Login Here</a></p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock content %}
