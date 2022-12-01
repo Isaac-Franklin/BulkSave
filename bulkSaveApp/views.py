@@ -30,7 +30,7 @@ def SignupPage(request):
             return redirect('SignupPage')
         else:
             messages.success(request, 'Registration Successful')
-            form = SignupModel(fullname=fullname, username=username, email=email, referal=referal, password=password, repassword=retypepassword, profileimage=profilepicture)
+            form = SignupModel(fullname=fullname, username=username, email=email, referal=referal, password=password, repassword=retypepassword)
 
             user = User.objects.create_user(
                 first_name=fullname, email=email, password=password, username=username)
