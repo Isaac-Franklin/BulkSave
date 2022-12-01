@@ -114,9 +114,7 @@ def AllAvailableLists(request):
 
 
 def LandingPage(request):
-    testfile = TestModel.objects.all()
-    context = {'testfile': testfile}
-    return render(request, 'bulkSaveApp/landingpage.html', context)
+    return render(request, 'bulkSaveApp/landingpage.html')
 
 
 def General(request):

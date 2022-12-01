@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+
+body {
+    /* background-color: rgb(22, 21, 21); */
+    background-color: white;
+
+}
+
+.createlistbtn {
+    background-color: white;
+    color: #297131;
+    font-weight: bold;
+}
+
+.specialtext {
+    color: white;
+}
+
+.main {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    background-color: #297131;
+    border-radius: 10px;
+    margin: 30px auto;
+
+}
+
+button {
+    height: 50px;
+    /* width: 100px; */
+    background-color: #297131;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    color: white;
+    padding: 10px;
+}
+
+.mainlistsection {
+    /* background-color: white; */
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.mainlistsectioninner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listdetails {
+    width: 60%;
+}
+
+.goback {
+    width: 55px;
+}
+
+.introsection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.goback img {
+    width: 30px;
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 70px;
+    text-align: center;
+    padding: 5px;
+}
+
+.downloadlistbtn button {
+    background-color: white;
+    color: #297131;
+    font-weight: bold;
+    /* border-radius: 10px; */
+}
+
+@media only screen and (max-width : 950px) {
+    .mainlistsectioninner {
+        display: inline;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .listdetails {
+        width: 100%;
+    }
+
+    .main {
+        width: 73%;
+        margin-left: 15%;
+
+    }
+}

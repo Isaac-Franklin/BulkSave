@@ -1,1 +1,131 @@
-<p>This is the landing page</p>
+{%load static%}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href={% static 'images/logo.png' %}>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> BulkSave </title>
+    <!-- <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}> -->
+    <link rel="stylesheet" href="{% static 'style/landingpage.css' %}" />
+</head>
+
+<body>
+    <div class="respactive">
+        <div>
+            <h1>BulkSave</h1>
+        </div>
+        <div class="navigation">
+            <img class="opennav" src={% static 'images/nav.png' %} />
+            <img class="closenav" src={% static 'images/navclose.png' %} />
+        </div>
+    </div>
+
+    <div class="nav bignav">
+        <div>
+            <h1>BulkSave</h1>
+        </div>
+        <div>
+            <ul>
+                <li><a href="#workings"><button>How It Works</button></a></li>
+                <li><a href={% url 'StartListPage' %}><button>Create A List</button></a></li>
+                <li><a href={% url 'SignupPage' %}><button>Register</button></a></li>
+                <li><a href={% url 'Loginpage' %}><button>Login</button></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="respgeneral">
+        <div>
+            <ul>
+                <li><a href="#workings"><button>How It Works</button></a></li>
+                <li><a href={% url 'StartListPage' %}><button>Create A List</button></a></li>
+                <li><a href={% url 'SignupPage' %}><button>Register</button></a></li>
+                <li><a href={% url 'Loginpage' %}><button>Login</button></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="herosection">
+        <h1>
+            Now You Can <strong>Easily</strong> Save WhatsApp Contacts In Bulk<br />
+            <a href={% url 'SignupPage' %}><button>Get Started</button></a>
+        </h1>
+    </div>
+    <div class="banner1">
+        <img src={% static 'images/banner4.jpg' %} />
+    </div>
+    <div class="nonavsection">
+        <div class="problemstatement">
+            <h1>Problem Statement</h1>
+            <p>Before now, if you are in the midst of a group of potention friends, and you All
+                want to exchange contacts, so you can keep in touch with them, you would have to pass around your phone
+                around
+                and this applies to everyone of you who intend to keep in touch.
+            </p><br />
+            <p>This can take mintes and hours to get all the contacts you intend to. Now what if you do not have the
+                time to
+                start
+                passing your phone around?
+                You might have to leave without getting these contacts.
+            </p><br />
+            <p>BulkSave solves this problem. With BulkSave, you and even other one hundred persons or more, can
+                easilysave
+                each other's contacts very easily.
+                It is easy as simply filling in your name and phone number in an input field, and downloading all
+                contacts
+                at ones into your Google contact and they'll be ready to view on everyone on WhatsApp within the minute.
+            </p>
+        </div>
+        <div class="banner1">
+            <img src={% static 'images/banner1.jpg' %} />
+        </div>
+        <div id="workings" class="howitworks">
+            <h1>How Does BulkSave Work?</h1>
+            <p>
+                To use BulkSave, You should either be creating a new list, or you are filling a brief form to join an
+                already
+                created list in order to have access to the contacts on the list in order to have them show up on your
+                WhatsApp.
+            </p><br />
+            <p>
+                In order to fill a form to join a list, you do not have to be a registered user, you should be directed
+                straight to the page where you are to fill in your contact information very briefly by entering your
+                full
+                name and phone number(s). If you intend to create a new list, you have to be a registed members on
+                BulkSaveApp. This is because you will have the responsibility to of choosing some features that go with
+                the list which includes deleting the list when you want to, allowing anyone to download the list or
+                making sure you alone have download access to the list.
+            </p><br />
+            <p>
+                The list, when downloaded are integratable into Google contacts, and then become visible on WhatsApp.
+                Therefore, for the contacts to show up on your mobile, and
+                for
+                you to be able to view these contacts on WhatsApp, you need to have Google Contacts active on your
+                mobile. Without this, you will not be able to view the contacts on WhatsApp, unless you save the
+                contacts individually.
+            </p>
+        </div>
+        <div class="banner2">
+            <img src={% static 'images/banner3.jpg' %} />
+        </div>
+    </div>
+    <footer>
+        <div>
+            <h1>BulkSave</h1>
+        </div>
+        <div>
+            App Developed by <a href="https://github.com/Isaac-Franklin" target="_blank">Isaac Franklin</a>
+        </div>
+    </footer>
+    <script type="module" src={% static 'js/responav.js' %}></script>
+</body>
+
+</html>
+{% endblock content %}

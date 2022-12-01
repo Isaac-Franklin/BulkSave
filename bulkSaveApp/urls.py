@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # path('', views.LandingPage, name='LandingPage'),
     path('exportdata/<str:Signature>/', views.export_to_csv, name='export_to_csv'),
-    path('landing/', views.LandingPage, name='LandingPage'),
+    path('', views.LandingPage, name='LandingPage'),
     path('general/', views.General, name='General'),
     path('collectdata/<str:Signature>/', views.CollectData, name='CollectData'),
     path('startlist/', views.StartListPage, name='StartListPage'),

@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.nav {
+    background-color: #297131;
+    padding: 10px 50px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 50px #888888;
+    /* position: fixed; */
+
+}
+
+.opennav {
+    display: none;
+}
+
+.respgeneral {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.nav ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+.nav ul li button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nonavsection {
+    width: 90%;
+    margin: auto;
+}
+
+
+.herosection {
+    margin: auto;
+    background-color: white;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    font-size: 2rem;
+    box-shadow: 3px 3px 50px #888888;
+    /* margin-top: 50px; */
+}
+
+.herosection h1 {
+    width: 70%;
+    margin: auto;
+}
+
+.herosection button {
+    padding: 10px;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    /* border-radius: 10px; */
+    border: none;
+    background-color: #297131;
+    color: white;
+}
+
+.problemstatement h1 {
+    margin-bottom: 10px;
+}
+
+
+.problemstatement p {
+    font-size: 1.2rem;
+}
+
+
+.problemstatement {
+    margin-top: 50px;
+    background-color: white;
+    background-attachment: fixed;
+    box-shadow: 3px 3px 50px #888888;
+    padding: 50px;
+}
+
+.howitworks h1 {
+    margin-bottom: 10px;
+}
+
+
+.howitworks p {
+    font-size: 1.2rem;
+}
+
+
+.howitworks {
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    background-color: white;
+    background-attachment: fixed;
+    text-align: right;
+    box-shadow: 3px 3px 50px #888888;
+    padding: 50px;
+}
+
+.banner1 img {
+    width: 100%;
+}
+
+.banner2 img {
+    width: 100%;
+
+}
+
+.closenav {
+    display: none;
+}
+
+.slidein {
+    display: block;
+    animation-name: slide;
+    animation-duration: 1s;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        left: -500px;
+    }
+
+    to {
+        opacity: 1;
+        left: 2px
+    }
+}
+
+.slideback {
+    animation-name: hidebar;
+    animation-duration: 1s;
+}
+
+@keyframes hidebar {
+    from {
+        opacity: 1;
+        left: -500px;
+    }
+
+    to {
+        opacity: 0;
+        left: 0px;
+    }
+}
+
+.respactive {
+    display: none;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width : 950px) {
+    .nav ul {
+        display: none;
+    }
+
+    .nav {
+        background-color: #297131;
+        padding: 10px;
+
+    }
+
+    .bignav {
+        display: none;
+    }
+
+    .respactive {
+        background-color: #297131;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        position: fixed;
+        color: white;
+
+    }
+
+    .respactive img {
+        width: 50px;
+    }
+
+    .herosection {
+        padding-top: 40px;
+        margin: auto;
+        overflow: hidden;
+
+    }
+
+    .herosection h1 {
+        width: 70%;
+        font-size: 1.3rem;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+
+
+    .navigation {
+        position: relative;
+    }
+
+    .opennav {
+        position: absolute;
+        padding: 5px;
+        right: 0px;
+        top: -25px;
+    }
+
+    .opennav {
+        display: block;
+    }
+
+
+
+    .closenav {
+        position: absolute;
+        right: 0px;
+        top: -25px;
+    }
+
+    .respgeneral {
+        position: fixed;
+        z-index: 10;
+        background-color: white;
+        padding: 10px;
+        width: 50%;
+        height: 50%;
+        box-shadow: 3px 3px 50px #888888;
+        transition: 1s ease-in-out;
+        display: none;
+
+    }
+
+    .respgeneral ul li {
+        margin-bottom: 20px;
+    }
+
+    .respgeneral ul li button {
+        padding: 10px;
+        font-size: 1.4rem;
+        margin-top: 20px;
+        /* border-radius: 10px; */
+        border: none;
+        background-color: #297131;
+        color: white;
+    }
+}

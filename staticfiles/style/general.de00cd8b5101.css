@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.nav {
+    background-color: #297131;
+    /* background-color: rgb(35, 34, 34); */
+    /* height: 10%; */
+    color: whitesmoke;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+}
+
+.nav h1 {
+    /* transform: rotate(-90deg); */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sidebar {
+    width: 6%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #297131;
+    border-top-right-radius: 250px;
+    color: whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 60px;
+    overflow: hidden;
+
+}
+
+.sidebar p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.logo {
+    width: 50px;
+    text-align: center;
+    margin-bottom: auto;
+    margin-bottom: 50px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.sidebarimages {
+    margin-top: 50px;
+
+}
+
+.specialtext {
+    color: white;
+}
+
+
+.sidebarimages img {
+    width: 30px;
+    margin-bottom: 70px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.sidebarimages img:hover {
+    background-color: #19a329;
+
+}
+
+.logo:hover {
+    background-color: #19a329;
+
+}
+
+@media only screen and (max-width : 950px) {
+    .logo {
+        width: 30px;
+        text-align: center;
+        margin-bottom: auto;
+        margin-bottom: 50px;
+    }
+
+    .sidebarimages img {
+        width: 20px;
+        margin-bottom: 70px;
+    }
+
+    .sidebar {
+        width: 14%;
+
+    }
+
+    .formarea {
+        width: 80%;
+        margin-left: 20%;
+        padding: 20px;
+        margin: auto;
+        background-color: rgb(199, 198, 198);
+        border-radius: 10px;
+        margin: 30px auto;
+
+    }
+}

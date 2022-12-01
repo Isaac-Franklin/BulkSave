@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure--m*57a(9#*t-jaes3z*p=@b=w&efmn1oata78xcl_dojgsi76c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bulksaveapp.up.railway.app', '127.0.0:1']
+ALLOWED_HOSTS = ['bulksaveapp.up.railway.app', '127.0.0.1']
 
 
 # Application definition

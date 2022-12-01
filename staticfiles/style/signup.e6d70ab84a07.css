@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+
+body {
+    background-color: white;
+    /* background-color: rgb(22, 21, 21); */
+
+}
+
+.formmain {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    background-color: #297131;
+    border-radius: 10px;
+    margin: 30px auto;
+
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+
+.formmain input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    height: 200px;
+}
+
+form button {
+    height: 50px;
+    border-radius: 10px;
+    /* width: 100px; */
+    padding: 10px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.formmain button {
+    height: 50px;
+    border-radius: 10px;
+    /* width: 100px; */
+    padding: 10px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width : 950px) {
+    .formmain {
+        width: 73%;
+        margin-left: 15%;
+
+    }
+}
