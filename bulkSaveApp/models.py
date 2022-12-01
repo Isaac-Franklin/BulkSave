@@ -24,7 +24,7 @@ class SignupModel(models.Model):
         return self.fullname
     
     
-    
+    # LOGIN FORM MODEL HERE
 class LoginForm(models.Model):
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
