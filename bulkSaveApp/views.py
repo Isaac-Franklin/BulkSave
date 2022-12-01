@@ -106,10 +106,11 @@ def AllAvailableLists(request):
     allLists = StartList.objects.all().order_by('-created_at')
     numoflists = allLists.count()
     if request.user.is_authenticated:
-        data = StartList.objects.filter(Username=request.user.last_name).first()
+        # data = StartList.objects.filter(Username=request.user.last_name).first()
+        pass
     else:
         return redirect('Loginpage')
-    context = {'allLists': allLists, 'numoflists':numoflists, 'data':data}
+    context = {'allLists': allLists, 'numoflists':numoflists}
     return render(request, 'bulkSaveApp/allavailablelists.html', context)
 
 
@@ -125,43 +126,29 @@ def General(request):
 def StartListPage(request):
     if request.method == 'POST':
         user = request.user
-        Username = request.POST['Username']
         Signature = request.POST['signature']
         Title = request.POST['title']
         Description = request.POST['Description']
         Access = request.POST['access']
-        Password = request.POST['Password']
         
-        data = SignupModel.objects.get(username = Username)
-        if data:
-            pass
-        else:
-            messages.error(request, 'Sorry, Your User Was Not Found, Kindly Signup To Create A List')
-            return render(request, 'bulkSaveApp/startlist.html')
-        
-        
-        data3 = SignupModel.objects.get(password=Password)
-        if data3:
-            pass
-        else:
-            messages.error(request, 'Sorry, Password Is Incorrect')
-            return render(request, 'bulkSaveApp/startlist.html')
         
         data2 = StartList.objects.filter(Signature=Signature)
         if data2:
             messages.error(request, 'Sorry, Your Signature Has To Be Unique, Kindly Enter Another One')
             return render(request, 'bulkSaveApp/startlist.html')
         else:
-            form = StartList(user = user, Username = Username, Description = Description, Title = Title, Access=Access, Password = Password,  Signature = Signature)
+            form = StartList(user = user, Description = Description, Title = Title, Access=Access, Signature = Signature)
             form.save()
             messages.success(request, 'New List Created Successfully')
             return redirect('AllAvailableLists')
     if request.user.is_authenticated:
-        data = StartList.objects.filter(Username=request.user.last_name).first()
+        # data = StartList.objects.filter(user.username == request.user.last_name).first()
+        pass
     else:
         return redirect('Loginpage')
-    context = {'data':data}
-    return render(request, 'bulkSaveApp/startlist.html', context)
+        messages.success(request, 'Sorry. You Have To Be Signed Up Before You Can Create A List')
+    # context = {'data':data}
+    return render(request, 'bulkSaveApp/startlist.html')
 
 
 

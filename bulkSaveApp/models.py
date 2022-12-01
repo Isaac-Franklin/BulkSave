@@ -52,15 +52,10 @@ class AllContacts(models.Model):
     
 class StartList(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    Username = models.CharField(max_length=200)
-    # LastName = models.CharField(max_length=200, blank=True, null=True)
     Signature = models.CharField(max_length=200)
     Title = models.CharField(max_length=2000, blank=True, null=True)
     Description = models.CharField(max_length=5000, blank=True, null=True)
-    # email  = models.EmailField(max_length=200)
-    # Phone_Number  = models.CharField(max_length=200, blank=True, null=True)
     Access = models.CharField(max_length=200)
-    Password = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     

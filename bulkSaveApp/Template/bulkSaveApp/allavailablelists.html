@@ -41,7 +41,7 @@
         <div class="mainlistsection">
             <div class="mainlistsectioninner">
                 <div class="listdetails">
-                    <p>{{ allLists.Username }} Created this list</p>
+                    <p>{{ allLists.user }} Created this list</p>
                     <a href="/listdetails/{{ allLists.Signature }}/">
                         <h3> Title: {{ allLists.Title }}</h3>
                     </a><br />
@@ -52,7 +52,7 @@
                 <div>
                     <a href="/collectdata/{{ allLists.Signature }}/"><button>Join This List</button></a>
                 </div>
-                {% if request.user.username == allLists.Username %}
+                {% if request.user == allLists.user %}
                 <a href="/deletelist/{{ allLists.Signature }}/"><button>Delete This List</button></a>
                 {% endif %}
 

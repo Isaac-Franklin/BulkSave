@@ -38,8 +38,6 @@
         <form method='POST'>
             {{allListStarters.Username}}
             {% csrf_token %}
-            <label class="specialtext">Enter Your Username: </label>
-            <input type="text" name="Username" placeholder="Enter Your Username [Eg: Johnny]" /><br /><br />
             <label class="specialtext">List signature: </label>
             <input type="text" name="signature" placeholder="Unique Marker For This List" /><br /><br />
             <label class="specialtext">List Title: </label>
@@ -54,8 +52,6 @@
                 <option value="no">No!, Just Me</option>
             </select>
             <br /><br />
-            <label class="specialtext">Password: </label>
-            <input type="password" name="Password" placeholder="Enter Your Password" /><br /><br />
             <button type="submit">Submit</button>
         </form>
     </div>
