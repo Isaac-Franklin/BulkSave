@@ -41,7 +41,7 @@
         <div class="mainlistsection">
             <div class="mainlistsectioninner">
                 <div class="listdetails">
-                    <p>{{ allLists.Username }} Created this list:</p>
+                    <p>{{ allLists.user }} Created this list:</p>
                     <h3> {{ allLists.Title }}</h3><br />
                     <small> {{ allLists.Description }}</small><br /><br />
                     <small> Created {{ allLists.created_at | timesince }} ago</small><br />
@@ -62,7 +62,7 @@
                     Now</button></a>
         </div>
         {% else %}
-        <p class="specialtext"><button>This is a private list, only {{allLists.Username}} can download</button></p>
+        <p class="specialtext"><button>This is a private list, only {{allLists.user}} can download</button></p>
         {% endif %}
     </div>
 </body>
