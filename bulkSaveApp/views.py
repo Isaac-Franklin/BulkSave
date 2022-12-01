@@ -62,7 +62,7 @@ def Loginpage(request):
 
         else:
             messages.error(request, 'Login Failed: Please Try Again')
-            return render(request, 'bulSaveApp/Login.html')
+            return render(request, 'bulkSaveApp/Login.html')
     return render(request, 'bulkSaveApp/Login.html')
 
 
