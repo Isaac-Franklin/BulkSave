@@ -17,6 +17,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['bulksaveapp.up.railway.app', '127.0.0.1']
 
 
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['bulksaveapp.up.railway.app']
+    
 # Application definition
 
 INSTALLED_APPS = [

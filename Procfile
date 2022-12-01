@@ -1,1 +1,1 @@
-web: gunicorn BulkSaveProject.wsgi
+web: gunicorn 'BulkSaveProject.wsgi'
