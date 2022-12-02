@@ -11,4 +11,4 @@ BulkSave solves this problem. With BulkSave, you and even other one hundred pers
 Please Visit https://bulksaveapp.up.railway.app/
 
 # Languages used
-On the frontend, I used Vanilla JS, HTML AND CSS, and on the backend, I used Django(Python). I chose to use Django because of how easily is makes documentation and collection of data to be.
+On the frontend, I used Vanilla JS, HTML AND CSS, and on the backend, I used Django(Python). I chose to use Django because of how easily is makes collection, documentation and management of data to be done seamlessly.
