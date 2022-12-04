@@ -75,6 +75,7 @@ def logoutUser(request):
 
 def CollectData(request, Signature):
     mycontacts = StartList.objects.get(Signature = Signature)
+    allsubContacts = AllContacts.objects.get(Signature = Signature)
     if request.method == 'POST':
         FullName = request.POST['fullname']
         Signature = request.POST['signature']
@@ -84,7 +85,7 @@ def CollectData(request, Signature):
         form.save()
         messages.success(request, 'Details Submitted Successful')
         return redirect('AllAvailableLists')
-    context = {'Signature': Signature, 'mycontacts' : mycontacts}
+    context = {'allsubContacts': allsubContacts, 'Signature': Signature, 'mycontacts' : mycontacts}
     return render(request, 'bulkSaveApp/contactlist.html', context)
 
 

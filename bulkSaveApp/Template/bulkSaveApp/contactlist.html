@@ -26,17 +26,20 @@
                 <h2 class="specialtext">Join us @ {{mycontacts.Title}}</h2>
             </div>
         </div>
-        <form method='POST'>
-            {% csrf_token %}
-            <input type="text" name="fullname" placeholder="Full Name [Eg: John Doe]" /><br />
-            <input type="text" name="signature" value={{Signature}} placeholder="THIS IS A DEFAULT VALUE" /><br />
-            <input type="tel" name="phonenumber" placeholder="Phone Number [Eg: +2345 567 1890]" /><br />
-            <input type="tel" name="phonenumber2" placeholder="OPTIONAL Phone Number [Eg: +2345 567 1890]" /><br />
-            <button type="submit">Submit</button>
-        </form><br /><br />
-        <p><a class="specialtext" target="_blank" href="https://www.the-qrcode-generator.com/">Click Here To Generate A
-                QR Code For This
-                Link</a></p>
+        <div>
+            <form method='POST'>
+                {% csrf_token %}
+                <input type="text" name="fullname" placeholder="Full Name [Eg: John Doe]" /><br />
+                <input type="text" name="signature" value={{Signature}} placeholder="THIS IS A DEFAULT VALUE" /><br />
+                <input type="tel" name="phonenumber" placeholder="Phone Number [Eg: +2345 567 1890]" /><br />
+                <input type="tel" name="phonenumber2" placeholder="OPTIONAL Phone Number [Eg: +2345 567 1890]" /><br />
+                <button type="submit">Submit</button>
+            </form><br /><br />
+            <p class="specialtext">Kindly Copy The URL To This Page &<a class="specialtext" target="_blank"
+                    href="https://www.the-qrcode-generator.com/"> Click Here To Generate A
+                    QR Code For The Link. </a> And Let Other Persons Simply Scan The QR Code To Get To This Page </p>
+        </div>
+
     </div>
 </body>
 
