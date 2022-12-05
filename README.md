@@ -12,3 +12,6 @@ Please Visit https://bulksaveapp.up.railway.app/
 
 # Languages used
 On the frontend, I used Vanilla JS, HTML AND CSS, and on the backend, I used Django(Python). I chose to use Django because of how easily is makes collection, documentation and management of data to be done seamlessly.
+
+# How To Save Contacts To Phone
+We are currently working on creating video that'll show you how to save all contacts to your device easily after you download any given list. Link to the video will be publised here when ready.
